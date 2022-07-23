@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "moyseafood"
+  "defaultProject": "moyseafood",
+  "cli": {
+    "analytics": false
+  }
 }
