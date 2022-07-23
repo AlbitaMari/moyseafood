@@ -1,0 +1,26 @@
+<div id="container">
+    <div class="toolbar" role="banner">
+        <div class="ps-3">User Detail</div>
+    </div>
+    <div class="row justify-content-center pdt">
+        <div class="col-5 pt-5">
+            <form [formGroup]="formEdit" (ngSubmit)="submitForm()">
+                <div *ngFor="let user of users">
+                    <div *ngIf="user.id == id">
+                        <div class="card justify-content-center">
+                            <div class="card-body">
+                              <h5 class="card-title">{{ user.name }} {{ user.username}}</h5>
+                              <p class="card-text pb-2">Email : <input formControlName="email" type="text" placeholder="{{ user.email }}"/></p>
+                              <p class="card-text pb-3">Phone : <input formControlName="phone" type="text" placeholder="{{ user.phone }}"/></p>
+                              <button type="submit" class="btn btn-primary btn-sm">Edit User</button>
+                              <button (click)="Back()" class="btn btn-primary btn-sm" style="margin-left : 10px">Back</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="error"><strong>{{result}}</strong></div>
+    </div>
+    
+</div>

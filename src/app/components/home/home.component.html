@@ -1,0 +1,37 @@
+
+<div id="container">
+    <div class="toolbar" role="banner">
+        <div class="ps-3">{{ titulo }}</div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-10 pt-5 pb-5 pl-5">
+            <form>
+                <div class="form-group pt-5">
+                  <label>Search</label>
+                  <input type="text" [(ngModel)]="term" name="term" class="form-control">
+                </div>
+              </form>
+        </div>
+    </div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Phone</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users | filter : term">
+        <td> {{ user.name }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phone }}</td>
+        <td>
+          <button type="button" class="btn btn-primary btn-sm" (click)="getDetail(user)">View Detail</button>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+</div>
